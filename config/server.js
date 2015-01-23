@@ -1,9 +1,7 @@
 var morgan      = require('morgan'),
     bodyParser  = require('body-parser'),
     cors        = require('cors'),
-    // lib         = require('../lib'),
-    express     = require('express');
-
+    lib         = require('../lib');
 
 module.exports = function(app){
 
@@ -13,7 +11,7 @@ module.exports = function(app){
 
   app.use(cors());
 
-  // app.use(lib.gateKeeper());
+  app.use(lib.gateKeeper());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
