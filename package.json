@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.10.2",
+    "composable-middleware": "^0.3.0",
+    "cors": "^2.5.3",
     "express": "^4.11.1",
     "lodash": "^2.4.1",
     "mongoose": "^3.8.21",
