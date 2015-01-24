@@ -8,6 +8,9 @@
     "start": "node index.js",
     "keep": "nodemon index.js"
   },
+  "engine": {
+    "node": "0.10.x"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

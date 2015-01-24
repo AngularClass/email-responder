@@ -17,5 +17,6 @@ module.exports = function(app){
 
   // setup all routing
   app.use('/services', require('../routes'));
-
+  // error handler
+  app.use(lib.errorHandler);
 };
