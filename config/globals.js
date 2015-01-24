@@ -1,4 +1,9 @@
 'use strict';
+
+function noop(){}
+noop.log = function(){};
+noop.error = function(){};
+
 var fs = require('fs');
 
 global._ = require('lodash');
@@ -16,6 +21,4 @@ if ($config.env === 'development') {
 global.$log = $config.logging ? console : noop;
 
 
-function noop(){};
-noop.log = function(){};
-noop.error = function(){};
+
