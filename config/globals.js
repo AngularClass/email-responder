@@ -17,3 +17,5 @@ global.$log = $config.logging ? console : noop;
 
 
 function noop(){};
+noop.log = function(){};
+noop.error = function(){};
