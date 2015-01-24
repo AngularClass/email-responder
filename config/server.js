@@ -1,7 +1,7 @@
 var morgan      = require('morgan'),
     bodyParser  = require('body-parser'),
     cors        = require('cors'),
-    lib         = require('../lib');
+    lib         = require('../middleware');
 
 module.exports = function(app){
 

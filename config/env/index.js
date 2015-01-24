@@ -3,9 +3,9 @@
 // WIll be overwritten and or extended dependent on whatever the **NODE_ENV** is
 
 'use strict';
-
+var env = process.env.NODE_ENV || 'development';
 // If in dev mode, set secrets for local
-if (process.env.NODE_ENV === 'development') {
+if (env === 'development') {
   var secrets;
   try {
     secrets = require('../_secrets');
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 var all = {
-  env: process.env.NODE_ENV || 'development',
+  env: env,
   port: process.env.PORT || '8080',
   secrets: {
     emailPassword: process.env.EMAIL_PASSWORD,

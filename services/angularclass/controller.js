@@ -1,4 +1,6 @@
 var Subscriber = require('../../models/subscribers');
+var mailer = require('../../components').mailer;
+var template = 'angularclass';
 
 module.exports = {
   all: function(req, res, next){
@@ -9,7 +11,18 @@ module.exports = {
   },
   post: function(req, res, next){
     var email = req.body.email;
-    $log.log(email);
-    res.send(email);
+    var message = {
+      template: template,
+      event: req.body.event,
+      email: email,
+      meta: req.body
+    };
+
+    mailer.send(message).then(function(){
+      res.send('ok');
+    })
+    .fail(function(err){
+      $log.error(err);
+    });
   }
 };

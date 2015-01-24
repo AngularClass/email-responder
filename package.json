@@ -19,6 +19,7 @@
     "mongoose": "^3.8.21",
     "morgan": "^1.5.1",
     "node-mailer": "^0.1.1",
+    "nodemailer": "^1.3.0",
     "q": "^1.1.2"
   }
 }
