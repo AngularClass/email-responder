@@ -11,7 +11,11 @@ var SubscriberSchema = new schema({
 
   name: String,
 
-  list: String
+  // what site ex: angular class
+  origin: String,
+
+  // what event ex: subscribe
+  event: String
 });
 
 module.exports = mongoose.model('subscriber', SubscriberSchema);

@@ -12,20 +12,32 @@ module.exports = {
   post: function(req, res, next){
     var email = req.body.email;
 
-    var message = {
-      template: template,
-      event: req.body.event,
-      email: email,
-      meta: req.body
-    };
+    var subscriber = _.extend(req.body, {
+      origin: template
+    });
     // TODO: check to make sure email isnt in here
     // if not, save email then send email
+    Subscriber.create(subscriber, function(err, doc){
+      if (err) {
+        return next(err);
+      }
 
-    mailer.send(message).then(function(){
-      res.send('ok');
-    })
-    .fail(function(err){
-      next(err);
+      var message = _.extend(doc, {
+        template: template,
+        meta: {
+          email: doc.email,
+          name: doc.name
+        }
+      });
+
+      mailer.send(message).then(function(){
+        res.send('ok');
+      })
+      .fail(function(err){
+        next(err);
+      });
     });
+
+
   }
 };

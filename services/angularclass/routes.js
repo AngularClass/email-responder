@@ -1,7 +1,9 @@
-var express = require('express'),
-    router  = express.Router(),
-    ngClassCtrl = require('./controller');
+var express     = require('express'),
+    router      = express.Router(),
+    ngClassCtrl = require('./controller'),
+    lib         = require('../../middleware');
 
+router.use(lib.checkEmail());
 router.route('/')
 .all(ngClassCtrl.all)
 .get(ngClassCtrl.get)
