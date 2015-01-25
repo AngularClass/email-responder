@@ -14,7 +14,7 @@ module.exports = function(app){
   app.use(lib.gateKeeper());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
-
+  app.use('/images', lib.images);
   // setup all routing
   app.use('/services', require('../routes'));
   // error handler
