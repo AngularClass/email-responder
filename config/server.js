@@ -11,7 +11,7 @@ module.exports = function(app){
 
   app.use(cors());
 
-  app.use(lib.gateKeeper());
+  // app.use(lib.gateKeeper());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use('/images', lib.images);
