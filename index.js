@@ -8,6 +8,7 @@ require('./config/globals');
 process.env.NODE_ENV =  process.env.NODE_ENV || 'development';
 
 // connect to mongo
+console.log($config.mongo.uri)
 mongoose.connect($config.mongo.uri);
 
 // setup server
